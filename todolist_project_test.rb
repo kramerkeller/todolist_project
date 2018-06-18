@@ -157,26 +157,3 @@ class TodoListTest < MiniTest::Test
     assert_equal(list.to_s, @list.select{ |todo| todo.done? }.to_s)
   end
 end
-Typically, ruby projects have a strict organization. Specifically, developers expect to find test code in a test directory, and Ruby source files in the lib directory. Go ahead and create these two directories, and store each of the downloaded files in the proper directory:
-
-$ mkdir lib test
-$ mv todolist_project.rb lib
-$ mv todolist_project_test.rb test
-You may remember that todolist_project_test.rb has a require_relative statement to load the main program, todolist_project.rb. With the new directory structure, you must change that statement to load todolist_project.rb from its new location. Open test/todolist_project_test.rb and replace the require_relative with:
-
-require_relative '../lib/todolist_project'
-Save the file. require_relative loads files relative to the location of the original file. Since lib and test are both inside the main project directory, we tell require_relative to move up one level (the ..), then down inside lib, and finally to load todolist_project.rb.
-
-You now have the basic structure of a typical ruby project. There are many other directories that you may need. For instance, web-based programs generally require "assets" like images, JavaScript, and CSS (stylesheets) -- these often reside in an assets directory with a subdirectory for each file type: images, javascript, and stylesheets. HTML "template" files usually reside in a views directory. You will see these different types of files in later courses, and will organize your projects in the way most Ruby developers organize things.
-
-This simple project requires only the lib and test directories, so you're done structuring things. Feel free to commit and push your updates.
-
-Our current project file structure should look like this:
-
-todolist_project
-├── README.md
-├── lib
-│   └── todolist_project.rb
-└── test
-    └── todolist_project_test.rb
- The Ruby Toolbox
