@@ -6,5 +6,6 @@ gem 'minitest', '~> 5.11'
 gem 'minitest-reporters', '~> 1.2'
 gem 'stamp', '~> 0.6'
 gem 'rake'
-gem 'gemspec'
-gem 'todolist_project'
+# gem 'todolist_project'
+
+gemspec
